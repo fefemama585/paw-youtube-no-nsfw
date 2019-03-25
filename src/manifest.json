@@ -1,0 +1,37 @@
+{
+  "applications": {
+    "gecko": {
+      "id": "pawYtNoNsfw@marion.dev"
+    }
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "manifest_version": 2,
+  "name": "PAW Youtube No Nsfw",
+  "version": "1.0",
+  "description": "Bypass \"Sign in to confirm your age\" dialog on youtube, so you can watch nsfw without a Google Account",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "exclude_matches": ["*://*.mozilla.org/*"],
+      "all_frames": true,
+      "js": ["data/content_script/inject.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_title": "pawYtNoNsfw",
+    "default_icon": {
+      "16": "data/icons/dark/16.png",
+      "32": "data/icons/dark/32.png"
+    }
+  },
+  "icons": {
+    "16": "data/icons/16.png",
+    "32": "data/icons/32.png",
+    "48": "data/icons/48.png",
+    "64": "data/icons/64.png",
+    "128": "data/icons/128.png"
+  }
+}
